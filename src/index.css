@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Outfit', sans-serif;
+
+  /* Define Semantic Colors mapped to CSS Variables */
+  --color-main-bg: var(--bg-primary);
+  --color-card-bg: var(--bg-card);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+
+  --color-accent-1: #38bdf8;
+  /* Sky Blue */
+  --color-accent-2: #818cf8;
+  /* Indigo */
+  --color-accent-3: #f472b6;
+  /* Pink */
+}
+
+/* Dynamic Theme Variables */
+:root {
+  /* Dark Mode (Default) */
+  --bg-primary: #0a0a0a;
+  --bg-card: rgba(255, 255, 255, 0.05);
+
+  --text-primary: #e5e5e5;
+  /* Softer white for better eye comfort */
+  --text-secondary: #a1a1aa;
+  /* Zinc 400 - Standard accessible gray */
+}
+
+:root.light {
+  /* Light Mode */
+  --bg-primary: #ffffff;
+  --bg-card: rgba(0, 0, 0, 0.05);
+
+  --text-primary: #171717;
+  /* Neutral 900 */
+  --text-secondary: #525252;
+  /* Neutral 600 */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* font-size: 16px; Default */
+  }
+
+  body {
+    @apply bg-main-bg text-text-primary antialiased selection:bg-accent-1/30 selection:text-accent-1 transition-colors duration-300 leading-relaxed;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-800 rounded-full hover:bg-slate-700;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-1 via-accent-2 to-accent-3;
+  }
+}
