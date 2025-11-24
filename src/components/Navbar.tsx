@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
                 <div className="max-w-[500px] w-full bg-main-bg/80 backdrop-blur-md rounded-full 
                   px-5 py-1 flex justify-between items-center border border-white/10 
                   shadow-lg shadow-black/5">
-                    {/* Expanding Initials */}
+
                     <Link to="/">
                         <div className="w-8 h-8 flex items-center justify-center font-bold text-white text-sm z-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full h-8 cursor-pointer relative">
                             AB
@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
                     </Link>
 
                     {/* Links */}
-                    <div className="hidden md:flex gap-6 lg:gap-8 text-sm font-medium text-text-secondary">
+                    <div className="hidden md:flex gap-6 lg:gap-8 text-sm font-bold text-text-secondary">
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
                                 className="hover:text-text-primary transition-colors relative group"
                             >
                                 {link.name}
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-1 transition-all group-hover:w-full"></span>
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-600 to-blue-600 transition-all group-hover:w-full"></span>
                             </a>
                         ))}
                     </div>

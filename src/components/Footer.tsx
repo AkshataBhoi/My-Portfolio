@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
             >
 
                 {/* Initials Logo */}
-                <div className="text-3xl font-bold tracking-widest bg-gradient-to-r from-violet-400 to-blue-400 bg-clip-text text-transparent select-none">
+                <div className="text-3xl font-bold tracking-widest bg-gradient-to-r from-violet-500 to-blue-500 bg-clip-text text-transparent select-none">
                     Akshata Bhoi
                 </div>
 

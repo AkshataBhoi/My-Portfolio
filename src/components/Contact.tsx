@@ -10,6 +10,7 @@ const Contact: React.FC = () => {
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -19,16 +20,37 @@ const Contact: React.FC = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setErrorMessage('');
 
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify({
+                    access_key: "e7bc736a-7ca5-47c7-83e5-2e1b636c2e9b",
+                    ...formData,
+                }),
+            });
 
-        setIsSubmitting(false);
-        setIsSuccess(true);
-        setFormData({ name: '', email: '', message: '' });
+            const result = await response.json();
 
-        // Reset success state after animation
-        setTimeout(() => setIsSuccess(false), 3000);
+            if (result.success) {
+                setIsSuccess(true);
+                setFormData({ name: '', email: '', message: '' });
+                setTimeout(() => setIsSuccess(false), 3000);
+            } else {
+                console.error("Form submission failed:", result);
+                setErrorMessage(result.message || "Something went wrong. Please try again.");
+            }
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            setErrorMessage("Failed to send message. Please check your connection.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -84,7 +106,6 @@ const Contact: React.FC = () => {
 
                         {/* Form Side */}
                         <motion.form
-                            action="https://api.web3forms.com/submit"
                             onSubmit={handleSubmit}
                             className="space-y-6 relative"
                             initial={{ opacity: 0, x: 20 }}
@@ -92,7 +113,6 @@ const Contact: React.FC = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: 0.2 }}
                         >
-                            <input type="hidden" name="access_key" value="c2cfff47-f9f7-4bf6-83c2-72702882d5c0"></input>
                             <div className="group relative">
                                 <input
                                     type="text"
@@ -214,21 +234,16 @@ const Contact: React.FC = () => {
                                             </motion.div>
                                         )}
                                     </AnimatePresence>
-
-                                    {/* Paper Plane Animation */}
-                                    {isSuccess && (
-                                        <motion.div
-                                            className="absolute top-1/2 left-1/2 text-white"
-                                            initial={{ x: 0, y: 0, opacity: 1, scale: 1 }}
-                                            animate={{ x: 200, y: -200, opacity: 0, scale: 0.5 }}
-                                            transition={{ duration: 1, ease: "easeIn" }}
-                                        >
-                                            <svg className="w-8 h-8 rotate-45" fill="currentColor" viewBox="0 0 24 24">
-                                                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
-                                            </svg>
-                                        </motion.div>
-                                    )}
                                 </button>
+                                {errorMessage && (
+                                    <motion.p
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="text-red-500 text-sm mt-2 text-center"
+                                    >
+                                        {errorMessage}
+                                    </motion.p>
+                                )}
                             </div>
                         </motion.form>
                     </div>
