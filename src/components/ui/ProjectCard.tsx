@@ -63,7 +63,7 @@ const ProjectCard: React.FC<ProjectProps> = ({ title, screenshotUrl, description
                 {/* Badges */}
                 <div className="flex flex-wrap gap-3 mt-2">
                     {tech.map((t) => (
-                        <TechBadge key={t.name} {...t} hideTextLabel />
+                        <TechBadge key={t.name} {...t} />
                     ))}
                 </div>
             </div>
