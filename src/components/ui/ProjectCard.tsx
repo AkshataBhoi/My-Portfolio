@@ -57,13 +57,13 @@ const ProjectCard: React.FC<ProjectProps> = ({ title, screenshotUrl, description
                             </a>
                         )}
                     </div>
-                    <p className="text-sm text-text-secondary leading-relaxed">{description}</p>
+                    <p className="text-sm text-text-secondary leading-relaxed hidden md:block">{description}</p>
                 </div>
 
                 {/* Badges */}
                 <div className="flex flex-wrap gap-3 mt-2">
                     {tech.map((t) => (
-                        <TechBadge key={t.name} {...t} />
+                        <TechBadge key={t.name} {...t} hideTextLabel />
                     ))}
                 </div>
             </div>

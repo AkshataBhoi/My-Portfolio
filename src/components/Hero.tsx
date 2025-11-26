@@ -203,7 +203,8 @@ const Hero: React.FC = () => {
                     >
                         {/* Resume Button with Blob Effect */}
                         <a
-                            href="/resume.pdf"
+                            href="/public/Akshata Bhoi.pdf"
+                            target='_blank'
                             download
                             className="group relative px-6 py-3 rounded-full font-semibold text-white overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-violet-500/25"
                         >
@@ -215,7 +216,7 @@ const Hero: React.FC = () => {
                                 </div>
                             </div>
                             <span className="relative z-10 flex items-center gap-2">
-                                Download Resume
+                                Resume
                                 <svg className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                                 </svg>
