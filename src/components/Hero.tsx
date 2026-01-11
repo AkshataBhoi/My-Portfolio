@@ -203,7 +203,7 @@ const Hero: React.FC = () => {
                     >
                         {/* Resume Button with Blob Effect */}
                         <a
-                            href="/public/Akshata Bhoi.pdf"
+                            href="/public/Akshata Bhoi 1.pdf"
                             target='_blank'
                             download
                             className="group relative px-6 py-3 rounded-full font-semibold text-white overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-violet-500/25"

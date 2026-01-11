@@ -125,13 +125,13 @@ export const projectsData: ProjectProps[] = [
   },
   {
     id: 5,
-    title: "ResuStack – AI Resume Builder",
+    title: "ResuStack–AI Resume Builder",
     year: "2025",
     status: "In Progress",
     screenshotUrl: "/images/ResuStack.png",
     description:
       "An AI-powered resume builder SaaS designed to help students and job seekers create ATS-optimized resumes. Built with a credit-based pricing model to keep costs minimal while providing intelligent resume generation and analysis.",
-    repoUrl: "https://github.com/AkshataBhoi/resustack-frontend",
+    repoUrl: "https://github.com/viveksonawale/ResuStack",
     liveUrl: "https://resustack.vercel.app",
     tech: [
       {
@@ -168,6 +168,23 @@ export const projectsData: ProjectProps[] = [
   },
   {
     id: 6,
+    title: "WorkNest",
+    year: "2025",
+    status:"In Process",
+    screenshotUrl: "/images/WorkNest.png",
+    description: "A collaborative workspace management platform built for individuals and teams who struggle with remembering responsibilities and tracking expenses. WorkNest helps organize tasks, manage shared responsibilities, track expenses, and collaborate efficiently across multiple domains such as homes, offices, and project teams.",
+    repoUrl: "https://github.com/AkshataBhoi/worknest",
+    liveUrl: "https://worknest-collab.vercel.app",
+    tech: [
+        { name: "Next.js", colorHex: "#000000", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+        { name: "React", colorHex: "#61dafb", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { name: "Node.js", colorHex: "#3c873a", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+        { name: "Express", colorHex: "#ffffff", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+        { name: "MongoDB", colorHex: "#4db33d", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" }
+    ]
+},
+  {
+    id: 7,
     title: "Portfolio V1",
     year: "2024",
     status:"Complete",
