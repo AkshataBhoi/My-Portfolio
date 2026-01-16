@@ -92,37 +92,37 @@ export const projectsData: ProjectProps[] = [
       },
     ],
   },
-  {
-    id: 4,
-    title: "Life in Frames",
-    year: "2025",
-    status:"Complete",
-    screenshotUrl: "/images/LifeInFrames.png",
-    description:
-      "A personal memory-keeping and travel photography project that captures spontaneous moments and transforms them into lasting visual memories, designed to recreate the same emotions and energy when revisited.",
-    repoUrl: "https://github.com/AkshataBhoi/life-in-frames",
-    liveUrl: "https://life-in-frames.vercel.app",
-    tech: [
-      {
-        name: "React",
-        colorHex: "#61dafb",
-        logoUrl:
-          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-      },
-      {
-        name: "Tailwind CSS",
-        colorHex: "#38bdf8",
-        logoUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
-      },
-      {
-        name: "JavaScript",
-        colorHex: "#f7df1e",
-        logoUrl:
-          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-      },
-    ],
-  },
+  // {
+  //   id: 4,
+  //   title: "Life in Frames",
+  //   year: "2025",
+  //   status:"Complete",
+  //   screenshotUrl: "/images/LifeInFrames.png",
+  //   description:
+  //     "A personal memory-keeping and travel photography project that captures spontaneous moments and transforms them into lasting visual memories, designed to recreate the same emotions and energy when revisited.",
+  //   repoUrl: "https://github.com/AkshataBhoi/life-in-frames",
+  //   liveUrl: "https://life-in-frames.vercel.app",
+  //   tech: [
+  //     {
+  //       name: "React",
+  //       colorHex: "#61dafb",
+  //       logoUrl:
+  //         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  //     },
+  //     {
+  //       name: "Tailwind CSS",
+  //       colorHex: "#38bdf8",
+  //       logoUrl:
+  //         "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
+  //     },
+  //     {
+  //       name: "JavaScript",
+  //       colorHex: "#f7df1e",
+  //       logoUrl:
+  //         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  //     },
+  //   ],
+  // },
   {
     id: 5,
     title: "ResuStack–AI Resume Builder",
