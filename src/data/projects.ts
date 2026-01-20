@@ -5,7 +5,7 @@ export const projectsData: ProjectProps[] = [
     id: 1,
     title: "Portfolio V2",
     year: "2025",
-    status:"Complete",
+    status: "Complete",
     screenshotUrl: "/images/portfolio2.png",
     description:
       "Minimalist portfolio featuring advanced animations, dynamic theming, and a premium design system.",
@@ -36,7 +36,7 @@ export const projectsData: ProjectProps[] = [
     id: 2,
     title: "Travel Loop",
     year: "2024",
-    status:"Complete",
+    status: "Complete",
     screenshotUrl: "/images/Traveloop.jpg",
     description:
       "Responsive travel booking platform with dynamic filters and personalized user experiences.",
@@ -66,7 +66,7 @@ export const projectsData: ProjectProps[] = [
     id: 3,
     title: "IMDB Clone",
     year: "2024",
-    status:"Complete",
+    status: "Complete",
     screenshotUrl: "/images/IMDB-Clone.jpg",
     description:
       "Dynamic movie database app featuring real-time API integration and watchlist functionality.",
@@ -170,24 +170,38 @@ export const projectsData: ProjectProps[] = [
     id: 6,
     title: "WorkNest",
     year: "2025",
-    status:"In Process",
+    status: "Completed",
     screenshotUrl: "/images/WorkNest.png",
-    description: "A collaborative workspace management platform built for individuals and teams who struggle with remembering responsibilities and tracking expenses. WorkNest helps organize tasks, manage shared responsibilities, track expenses, and collaborate efficiently across multiple domains such as homes, offices, and project teams.",
+    description:
+      "A collaborative workspace platform that helps individuals and teams manage tasks, shared responsibilities, and expenses efficiently across homes, offices, and project teams.",
     repoUrl: "https://github.com/AkshataBhoi/worknest",
     liveUrl: "https://worknest-collab.vercel.app",
     tech: [
-        { name: "Next.js", colorHex: "#000000", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
-        { name: "React", colorHex: "#61dafb", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-        { name: "Node.js", colorHex: "#3c873a", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-        { name: "Express", colorHex: "#ffffff", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
-        { name: "MongoDB", colorHex: "#4db33d", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" }
-    ]
-},
+      {
+        name: "Next.js",
+        colorHex: "#000000",
+        logoUrl:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+      },
+      {
+        name: "React",
+        colorHex: "#61dafb",
+        logoUrl:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      },
+      {
+        name: "Firebase",
+        colorHex: "#ffca28",
+        logoUrl:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+      },
+    ],
+  },
   {
     id: 7,
     title: "Portfolio V1",
     year: "2024",
-    status:"Complete",
+    status: "Complete",
     screenshotUrl: "/images/portfolio1.png",
     description:
       "Dynamic movie database app featuring real-time API integration and watchlist functionality.",
