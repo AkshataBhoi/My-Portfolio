@@ -125,14 +125,14 @@ export const projectsData: ProjectProps[] = [
   // },
   {
     id: 5,
-    title: "ResuStack–AI Resume Builder",
+    title: "QuickCV",
     year: "2025",
     status: "In Progress",
-    screenshotUrl: "/images/ResuStack.png",
+    screenshotUrl: "/images/quickcv.jpeg",
     description:
       "An AI-powered resume builder SaaS designed to help students and job seekers create ATS-optimized resumes. Built with a credit-based pricing model to keep costs minimal while providing intelligent resume generation and analysis.",
-    repoUrl: "https://github.com/viveksonawale/ResuStack",
-    liveUrl: "https://resustack.vercel.app",
+    repoUrl: "https://github.com/AkshataBhoi/QuickCV",
+    liveUrl: "https://quick-cv-xi.vercel.app/",
     tech: [
       {
         name: "Next.js",
