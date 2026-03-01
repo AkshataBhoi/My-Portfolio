@@ -15,8 +15,8 @@ const AllProjects: React.FC = () => {
                         </svg>
                         Back to Home
                     </Link>
-                    <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-4">All Projects</h1>
-                    <p className="text-text-secondary text-lg max-w-2xl">
+                    <h1 className=" text-4xl md:text-5xl font-bold text-text-primary mb-4 text-center lg:text-left">All Projects</h1>
+                    <p className="text-text-secondary text-lg max-w-2xl text-center lg:text-left ">
                         A complete collection of my work, experiments, and open source contributions.
                     </p>
                 </div>
