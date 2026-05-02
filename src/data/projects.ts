@@ -144,6 +144,37 @@ export const projectsData: ProjectProps[] = [
       },
     ],
   },
+  {
+  id: 8,
+  title: "Metanoia Global",
+  year: "2026",
+  status: "Completed",
+  screenshotUrl: "/images/MetaHomePg.JPG",
+  description:
+    "Enhanced UI/UX of a live website, redesigned key sections, ensured full responsiveness, and contributed directly to a real-world production codebase.",
+  repoUrl: "https://github.com/viveksonawale/metanoia",
+  liveUrl: "https://www.metanoiaglobal.com/",
+  tech: [
+  {
+    name: "Next.js",
+    colorHex: "#000000",
+    logoUrl:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+  },
+  {
+    name: "React",
+    colorHex: "#61dafb",
+    logoUrl:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  },
+  {
+    name: "Tailwind CSS",
+    colorHex: "#38bdf8",
+    logoUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
+  },
+],
+},
   // {
   //   id: 8,
   //   title: "SpaceWise",

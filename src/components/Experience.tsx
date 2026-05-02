@@ -17,7 +17,7 @@ const Experience: React.FC = () => {
                 "Pursuing Bachelor of Engineering in Computer Engineering.",
                 "Focusing on advanced algorithms, system design, and full-stack development."
             ],
-            badges: []
+            badges: ["Mumbai University"]
         },
         {
             id: 2,
@@ -28,7 +28,7 @@ const Experience: React.FC = () => {
                 "Completed Diploma with 90% aggregate.",
                 "Built strong foundation in programming and computer science principles."
             ],
-            badges: ["Grade: 90%", "MSBTE"]
+            badges: ["MSBTE"]
         }
     ];
 
