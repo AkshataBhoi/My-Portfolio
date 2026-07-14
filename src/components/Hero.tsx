@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring, useMotionValue, useMotionTemplate } from 'framer-motion';
 import Container from './layout/Container';
-import DraggableCarousel from './ui/DraggableCarousel';
+// import DraggableCarousel from './ui/DraggableCarousel';
 
 const Hero: React.FC = () => {
     const ref = useRef<HTMLElement>(null);
@@ -51,13 +51,13 @@ const Hero: React.FC = () => {
     const xContent = useTransform(xSpring, [-0.5, 0.5], ["-2%", "2%"]);
     const yContent = useTransform(ySpring, [-0.5, 0.5], ["-2%", "2%"]);
 
-    const carouselImages = [
-        '/images/Ak2.jpeg',
-        '/images/Ak1.jpeg',
-        '/images/Ak3.jpg',
-        '/images/Ak4.png',
-        '/images/AK5.png',
-    ];
+    // const carouselImages = [
+    //     '/images/Ak2.jpeg',
+    //     '/images/Ak1.jpeg',
+    //     '/images/Ak3.jpg',
+    //     '/images/Ak4.png',
+    //     '/images/AK5.png',
+    // ];
 
     return (
         <section
