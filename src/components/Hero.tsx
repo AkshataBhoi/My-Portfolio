@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring, useMotionValue, useMotionTemplate } from 'framer-motion';
 import Container from './layout/Container';
 import DraggableCarousel from './ui/DraggableCarousel';
 
@@ -20,6 +20,13 @@ const Hero: React.FC = () => {
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
 
+    // Spotlight — raw pixel position of the cursor
+    const spotlightX = useMotionValue(-9999);
+    const spotlightY = useMotionValue(-9999);
+
+    // Radial-gradient string that follows the cursor
+    const spotlightBackground = useMotionTemplate`radial-gradient(480px circle at ${spotlightX}px ${spotlightY}px, rgba(139,92,246,0.12) 0%, rgba(59,130,246,0.06) 40%, transparent 70%)`;
+
     const handleMouseMove = (e: React.MouseEvent) => {
         const { clientX, clientY } = e;
         const { innerWidth, innerHeight } = window;
@@ -27,6 +34,11 @@ const Hero: React.FC = () => {
         const y = clientY / innerHeight - 0.5;
         mouseX.set(x);
         mouseY.set(y);
+
+        // Update spotlight with the section-relative position
+        const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+        spotlightX.set(clientX - rect.left);
+        spotlightY.set(clientY - rect.top);
     };
 
     const springConfig = { damping: 25, stiffness: 150 };
@@ -109,9 +121,54 @@ const Hero: React.FC = () => {
 
             <div className="fixed left-0 top-0 h-full w-32 bg-gradient-to-r from-accent-2/5 to-transparent -z-10 pointer-events-none"></div>
 
+            {/* ── Premium Background Enhancement ─────────────────────────── */}
+            {/* Static radial glow: purple top-left */}
+            <div
+                aria-hidden="true"
+                className="absolute pointer-events-none select-none"
+                style={{
+                    top: '-10%',
+                    left: '-8%',
+                    width: '55vw',
+                    height: '55vw',
+                    maxWidth: '700px',
+                    maxHeight: '700px',
+                    background: 'radial-gradient(circle, rgba(139,92,246,0.18) 0%, rgba(109,40,217,0.08) 45%, transparent 70%)',
+                    filter: 'blur(2px)',
+                    zIndex: 0,
+                }}
+            />
+            {/* Static radial glow: cyan bottom-right */}
+            <div
+                aria-hidden="true"
+                className="absolute pointer-events-none select-none"
+                style={{
+                    bottom: '-12%',
+                    right: '-6%',
+                    width: '50vw',
+                    height: '50vw',
+                    maxWidth: '650px',
+                    maxHeight: '650px',
+                    background: 'radial-gradient(circle, rgba(6,182,212,0.16) 0%, rgba(14,116,144,0.07) 45%, transparent 70%)',
+                    filter: 'blur(2px)',
+                    zIndex: 0,
+                }}
+            />
+            {/* Mouse-following spotlight */}
+            <motion.div
+                aria-hidden="true"
+                className="absolute inset-0 pointer-events-none select-none"
+                style={{
+                    background: spotlightBackground,
+                    zIndex: 1,
+                    willChange: 'background',
+                }}
+            />
+            {/* ── End Premium Background Enhancement ─────────────────────── */}
+
             <Container className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
                 {/* Image Side - Carousel with Parallax */}
-                <motion.div
+                {/* <motion.div
                     className="relative order-2 md:order-1 flex justify-center md:justify-start"
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -121,7 +178,7 @@ const Hero: React.FC = () => {
                     <div className="relative z-10 transform transition-transform hover:scale-[1.02] duration-500">
                         <DraggableCarousel images={carouselImages} />
                     </div>
-                    {/* Decorative Blob behind image */}
+                    {/* Decorative Blob behind image }
                     <motion.div
                         className="absolute inset-0 bg-gradient-to-tr from-violet-500/20 to-blue-500/20 rounded-3xl blur-2xl -z-10"
                         animate={{
@@ -134,6 +191,60 @@ const Hero: React.FC = () => {
                             ease: "easeInOut"
                         }}
                     />
+                </motion.div> */}
+                <motion.div
+                    className="relative order-2 md:order-1 flex items-center justify-center"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                    style={{ x: xContent, y: yContent }}
+                >
+                    {/* Soft Glow */}
+                    <motion.div
+                        className="absolute w-[480px] h-[480px] rounded-full bg-gradient-to-r from-violet-500/20 via-blue-500/20 to-cyan-500/20 blur-3xl"
+                        animate={{
+                            scale: [1, 1.08, 1],
+                            opacity: [0.5, 0.8, 0.5],
+                        }}
+                        transition={{
+                            duration: 6,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                        }}
+                    />
+
+                    {/* Animated Gradient Border */}
+                    <motion.div
+                        className="absolute w-[435px] h-[435px] rounded-full bg-gradient-to-r from-violet-500 via-blue-500 to-cyan-500 p-[3px]"
+                        // animate={{ rotate: 360 }}
+                        transition={{
+                            duration: 15,
+                            repeat: Infinity,
+                            ease: "linear",
+                        }}
+                    >
+                        <div className="w-full h-full rounded-full bg-white dark:bg-neutral-950" />
+                    </motion.div>
+
+                    {/* Image */}
+                    <motion.div
+                        className="relative z-10 w-[410px] h-[410px] rounded-full overflow-hidden bg-white shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
+                        // animate={{
+                        //     y: [0, -8, 0],
+                        // }}
+                        // transition={{
+                        //     duration: 5,
+                        //     repeat: Infinity,
+                        //     ease: "easeInOut",
+                        // }}
+                    >
+                        <img
+                            src="/images/AkshataBhoi_COMPS.jpeg"
+                            alt="Akshata Bhoi"
+                            className="w-full h-full object-cover object-center"
+                            draggable={false}
+                        />
+                    </motion.div>
                 </motion.div>
 
                 {/* Typography Side with Scroll Parallax */}
@@ -203,7 +314,7 @@ const Hero: React.FC = () => {
                     >
                         {/* Resume Button with Blob Effect */}
                         <a
-                            href="/public/Akshata Bhoi9.pdf"
+                            href="/public/Akshata Bhoi12.pdf"
                             target='_blank'
                             download
                             className="group relative px-6 py-3 rounded-full font-semibold text-white overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-violet-500/25"
