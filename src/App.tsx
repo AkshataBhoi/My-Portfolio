@@ -6,13 +6,15 @@ import Contact from './pages/ContactPage';
 import AllProjects from './pages/AllProjects';
 import { useTheme } from './hooks/useTheme';
 import Footer from './components/Footer';
+import GlobalBackground from './components/layout/GlobalBackground';
 
 const App: React.FC = () => {
   useTheme(); // Initialize theme
 
   return (
     <Router>
-      <div className="min-h-screen bg-main-bg text-text-primary font-sans selection:bg-accent-1/30">
+      <GlobalBackground />
+      <div className="min-h-screen text-text-primary font-sans selection:bg-accent-1/30 relative z-0">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

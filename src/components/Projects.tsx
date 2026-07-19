@@ -9,7 +9,7 @@ const Projects: React.FC = () => {
     const featuredProjects = projectsData.slice(0, 3);
 
     return (
-        <section id="projects" className="py-20">
+        <section id="projects" className="py-20 relative z-10">
             <Container>
                 <motion.div
                     className="mb-16"

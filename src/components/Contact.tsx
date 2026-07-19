@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
                     Accept: "application/json",
                 },
                 body: JSON.stringify({
-                    access_key: "e7bc736a-7ca5-47c7-83e5-2e1b636c2e9b",
+                    access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
                     ...formData,
                 }),
             });

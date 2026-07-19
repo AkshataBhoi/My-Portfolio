@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring, useMotionValue, useMotionTemplate } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
 import Container from './layout/Container';
 // import DraggableCarousel from './ui/DraggableCarousel';
 
@@ -20,13 +20,6 @@ const Hero: React.FC = () => {
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
 
-    // Spotlight — raw pixel position of the cursor
-    const spotlightX = useMotionValue(-9999);
-    const spotlightY = useMotionValue(-9999);
-
-    // Radial-gradient string that follows the cursor
-    const spotlightBackground = useMotionTemplate`radial-gradient(480px circle at ${spotlightX}px ${spotlightY}px, rgba(139,92,246,0.12) 0%, rgba(59,130,246,0.06) 40%, transparent 70%)`;
-
     const handleMouseMove = (e: React.MouseEvent) => {
         const { clientX, clientY } = e;
         const { innerWidth, innerHeight } = window;
@@ -34,11 +27,6 @@ const Hero: React.FC = () => {
         const y = clientY / innerHeight - 0.5;
         mouseX.set(x);
         mouseY.set(y);
-
-        // Update spotlight with the section-relative position
-        const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
-        spotlightX.set(clientX - rect.left);
-        spotlightY.set(clientY - rect.top);
     };
 
     const springConfig = { damping: 25, stiffness: 150 };
@@ -66,105 +54,7 @@ const Hero: React.FC = () => {
             className="min-h-screen flex items-center justify-center pt-20 pb-20 md:pb-0 relative overflow-hidden"
             onMouseMove={handleMouseMove}
         >
-            {/* Parallax Background Elements */}
-            <motion.div
-                style={{ y: yBackground, x: xBackground, translateY: yBackgroundMouse }}
-                className="absolute inset-0 w-full h-full -z-10 pointer-events-none overflow-hidden"
-            >
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent-2/20 rounded-full blur-[120px] opacity-40 mix-blend-screen"></div>
-                <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[100px] opacity-30"></div>
-                <div className="absolute top-1/4 left-10 w-32 h-32 bg-blue-400/20 rounded-full blur-[50px] animate-pulse"></div>
-
-                {/* Artistic Strokes */}
-                <svg className="absolute inset-0 w-full h-full opacity-30" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="stroke-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stopColor="#8b5cf6" /> {/* Violet */}
-                            <stop offset="100%" stopColor="#3b82f6" /> {/* Blue */}
-                        </linearGradient>
-                        <linearGradient id="stroke-grad-2" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stopColor="#ec4899" /> {/* Pink */}
-                            <stop offset="100%" stopColor="#06b6d4" /> {/* Cyan */}
-                        </linearGradient>
-                    </defs>
-
-                    <motion.path
-                        d="M-100,100 C200,300 400,0 600,200 S1000,100 1200,400"
-                        fill="none"
-                        stroke="url(#stroke-grad-1)"
-                        strokeWidth="2"
-                        initial={{ pathLength: 0, opacity: 0 }}
-                        animate={{ pathLength: 1, opacity: 1 }}
-                        transition={{ duration: 2, ease: "easeInOut" }}
-                    />
-                    <motion.path
-                        d="M-100,300 C300,500 500,200 800,400 S1200,300 1400,600"
-                        fill="none"
-                        stroke="url(#stroke-grad-2)"
-                        strokeWidth="2"
-                        initial={{ pathLength: 0, opacity: 0 }}
-                        animate={{ pathLength: 1, opacity: 1 }}
-                        transition={{ duration: 2.5, ease: "easeInOut", delay: 0.5 }}
-                    />
-                    <motion.path
-                        d="M100,600 C400,400 600,700 900,500 S1300,600 1500,300"
-                        fill="none"
-                        stroke="url(#stroke-grad-1)"
-                        strokeWidth="1.5"
-                        strokeDasharray="10 10"
-                        initial={{ pathLength: 0, opacity: 0 }}
-                        animate={{ pathLength: 1, opacity: 0.5 }}
-                        transition={{ duration: 3, ease: "easeInOut", delay: 1 }}
-                    />
-                </svg>
-            </motion.div>
-
-            <div className="fixed left-0 top-0 h-full w-32 bg-gradient-to-r from-accent-2/5 to-transparent -z-10 pointer-events-none"></div>
-
-            {/* ── Premium Background Enhancement ─────────────────────────── */}
-            {/* Static radial glow: purple top-left */}
-            <div
-                aria-hidden="true"
-                className="absolute pointer-events-none select-none"
-                style={{
-                    top: '-10%',
-                    left: '-8%',
-                    width: '55vw',
-                    height: '55vw',
-                    maxWidth: '700px',
-                    maxHeight: '700px',
-                    background: 'radial-gradient(circle, rgba(139,92,246,0.18) 0%, rgba(109,40,217,0.08) 45%, transparent 70%)',
-                    filter: 'blur(2px)',
-                    zIndex: 0,
-                }}
-            />
-            {/* Static radial glow: cyan bottom-right */}
-            <div
-                aria-hidden="true"
-                className="absolute pointer-events-none select-none"
-                style={{
-                    bottom: '-12%',
-                    right: '-6%',
-                    width: '50vw',
-                    height: '50vw',
-                    maxWidth: '650px',
-                    maxHeight: '650px',
-                    background: 'radial-gradient(circle, rgba(6,182,212,0.16) 0%, rgba(14,116,144,0.07) 45%, transparent 70%)',
-                    filter: 'blur(2px)',
-                    zIndex: 0,
-                }}
-            />
-            {/* Mouse-following spotlight */}
-            <motion.div
-                aria-hidden="true"
-                className="absolute inset-0 pointer-events-none select-none"
-                style={{
-                    background: spotlightBackground,
-                    zIndex: 1,
-                    willChange: 'background',
-                }}
-            />
-            {/* ── End Premium Background Enhancement ─────────────────────── */}
+            {/* Premium Background Enhancement was moved to GlobalBackground */}
 
             <Container className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
                 {/* Image Side - Carousel with Parallax */}
@@ -314,10 +204,10 @@ const Hero: React.FC = () => {
                     >
                         {/* Resume Button with Blob Effect */}
                         <a
-                            href="/public/Akshata Bhoi12.pdf"
+                            href="/public/Akshata Bhoi13.pdf"
                             target='_blank'
                             download
-                            className="group relative px-6 py-3 rounded-full font-semibold text-white overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-violet-500/25"
+                            className="group relative px-6 py-3 rounded-full font-semibold text-white   overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-violet-500/25"
                         >
                             <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-purple-600 rounded-full"></div>
                             <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
