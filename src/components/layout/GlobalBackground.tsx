@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { motion, useMotionValue, useMotionTemplate, useSpring } from 'framer-motion';
+// import React, { useEffect } from 'react';
+// import { motion, useMotionValue, useMotionTemplate, useSpring } from 'framer-motion';
 
 const GlobalBackground: React.FC = () => {
     return (

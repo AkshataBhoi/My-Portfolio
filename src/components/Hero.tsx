@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
         offset: ["start start", "end start"]
     });
 
-    const yBackground = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+    // const yBackground = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
     const yText = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
     const opacityText = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
@@ -33,8 +33,8 @@ const Hero: React.FC = () => {
     const xSpring = useSpring(mouseX, springConfig);
     const ySpring = useSpring(mouseY, springConfig);
 
-    const xBackground = useTransform(xSpring, [-0.5, 0.5], ["5%", "-5%"]);
-    const yBackgroundMouse = useTransform(ySpring, [-0.5, 0.5], ["5%", "-5%"]);
+    // const xBackground = useTransform(xSpring, [-0.5, 0.5], ["5%", "-5%"]);
+    // const yBackgroundMouse = useTransform(ySpring, [-0.5, 0.5], ["5%", "-5%"]);
 
     const xContent = useTransform(xSpring, [-0.5, 0.5], ["-2%", "2%"]);
     const yContent = useTransform(ySpring, [-0.5, 0.5], ["-2%", "2%"]);
