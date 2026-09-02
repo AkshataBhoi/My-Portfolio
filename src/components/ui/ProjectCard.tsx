@@ -56,7 +56,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
             <div className="mt-6 flex flex-col gap-4 px-1">
                 <div>
                     <div className="flex items-center gap-3 mb-3">
-                        <h3 className="text-xl font-semibold text-text-primary transition-colors">{title}</h3>
+                        <h3 className="text-lg font-semibold text-text-primary transition-colors">{title}</h3>
 
                         <div className="flex gap-2 ml-auto items-center">
                             {/* GitHub Icon */}

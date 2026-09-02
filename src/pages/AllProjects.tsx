@@ -6,7 +6,7 @@ import { projectsData } from '../data/projects';
 
 const AllProjects: React.FC = () => {
     return (
-        <div className="min-h-screen pt-32 pb-20">
+        <div className="min-h-screen pt-32 pb-20  ">
             <Container>
                 <div className="mb-12">
                     <Link to="/" className="inline-flex items-center gap-2 text-text-secondary hover:text-violet-500 transition-colors mb-6 group">
@@ -21,7 +21,7 @@ const AllProjects: React.FC = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-8xl border mx-auto">
                     {projectsData.map((project) => (
                         <ProjectCard key={project.id} {...project} />
                     ))}
