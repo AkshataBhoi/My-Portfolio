@@ -82,48 +82,48 @@ export const projectsData: ProjectProps[] = [
     ],
   },
   {
-  id: 3,
-  title: "Metanoia Global",
-  year: "2026",
-  status: "Completed",
-  screenshotUrl: "/images/MetaHomePg.JPG",
-  description:
-    "Enhanced UI/UX of a live website, redesigned key sections, ensured full responsiveness, and contributed directly to a real-world production codebase.",
-  repoUrl: "https://github.com/viveksonawale/metanoia",
-  liveUrl: "https://www.metanoiaglobal.com/",
-  tech: [
-  {
-    name: "Next.js",
-    colorHex: "#000000",
-    logoUrl:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+    id: 3,
+    title: "Metanoia Global",
+    year: "2026",
+    status: "Completed",
+    screenshotUrl: "/images/MetaHomePg.JPG",
+    description:
+      "Enhanced UI/UX of a live website, redesigned key sections, ensured full responsiveness, and contributed directly to a real-world production codebase.",
+    repoUrl: "https://github.com/viveksonawale/metanoia",
+    liveUrl: "https://www.metanoiaglobal.com/",
+    tech: [
+      {
+        name: "Next.js",
+        colorHex: "#000000",
+        logoUrl:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+      },
+      {
+        name: "React",
+        colorHex: "#61dafb",
+        logoUrl:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      },
+      {
+        name: "Tailwind CSS",
+        colorHex: "#38bdf8",
+        logoUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
+      },
+    ],
   },
   {
-    name: "React",
-    colorHex: "#61dafb",
-    logoUrl:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-  },
-  {
-    name: "Tailwind CSS",
-    colorHex: "#38bdf8",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
-  },
-],
-},
-{
-  id: 4,
-  title: "TaskFlow",
-  year: "2026",
-  status: "Completed",
-  screenshotUrl: "/images/TaskFlow.jpeg",
-  description:
-    "A task management platform that helps users organize, track, and manage their work through a simple and focused workflow.",
-  repoUrl: "https://github.com/AkshataBhoi/TaskFlow",
-  liveUrl: "https://task-flow-gules-five.vercel.app/login",
- tech: [
-  {
+    id: 4,
+    title: "TaskFlow",
+    year: "2026",
+    status: "Completed",
+    screenshotUrl: "/images/TaskFlow.jpeg",
+    description:
+      "A task management platform that helps users organize, track, and manage their work through a simple and focused workflow.",
+    repoUrl: "https://github.com/AkshataBhoi/TaskFlow",
+    liveUrl: "https://task-flow-gules-five.vercel.app/login",
+    tech: [
+      {
         name: "Next.js",
         colorHex: "#000000",
         logoUrl:
@@ -153,8 +153,100 @@ export const projectsData: ProjectProps[] = [
         logoUrl:
           "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
       },
-],
-},
+    ],
+  },
+  {
+    id: 5,
+    title: "Roamly",
+    year: "2026",
+    status: "Completed",
+    screenshotUrl: "/images/Roamly.jpeg",
+    description:
+      "A smart travel planning platform that combines location-based discovery with machine learning to help users explore and plan trips more intelligently.",
+    repoUrl: "https://github.com/AkshataBhoi/Roamly-ml",
+    liveUrl: "https://roamly-find.vercel.app/",
+    tech: [
+      {
+        name: "Next.js",
+        colorHex: "#000000",
+        logoUrl:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+      },
+      {
+        name: "Node.js",
+        colorHex: "#3c873a",
+        logoUrl:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      },
+      {
+        name: "Express",
+        colorHex: "#ffffff",
+        logoUrl:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+      },
+      {
+        name: "Overpass API",
+        colorHex: "#111111",
+        logoUrl:
+          "https://raw.githubusercontent.com/openstreetmap/website/master/favicon.ico",
+      },
+      {
+        name: "XGBoost",
+        colorHex: "#006600",
+        logoUrl:
+          "https://raw.githubusercontent.com/dmlc/dmlc.github.io/master/img/xgboost.png",
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: "VaaniQ",
+    year: "2026",
+    status: "Completed",
+    screenshotUrl: "/images/VaaniQ.jpeg",
+    description:
+      "A multilingual NLP platform that analyzes text through language detection, tokenization, part-of-speech tagging, and lemmatization.",
+    repoUrl: "https://github.com/AkshataBhoi/VaaniQ",
+    liveUrl: "https://vaani-q.vercel.app/",
+    tech: [
+      {
+        name: "React",
+        colorHex: "#61dafb",
+        logoUrl:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      },
+      {
+        name: "TypeScript",
+        colorHex: "#3178c6",
+        logoUrl:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      },
+      {
+        name: "Vite",
+        colorHex: "#646cff",
+        logoUrl:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg",
+      },
+      {
+        name: "Python",
+        colorHex: "#3776ab",
+        logoUrl:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+      },
+      {
+        name: "Flask",
+        colorHex: "#000000",
+        logoUrl:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg",
+      },
+      {
+        name: "NLTK",
+        colorHex: "#4b8bbe",
+        logoUrl:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+      },
+    ],
+  }
   // {
   //   id: 5,
   //   title: "Portfolio V2",
@@ -308,7 +400,7 @@ export const projectsData: ProjectProps[] = [
   //     },
   //   ],
   // },
-  
+
   // {
   //   id: 8,
   //   title: "SpaceWise",
